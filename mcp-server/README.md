@@ -16,7 +16,7 @@ Works alongside the companion browser extension (Chrome / Edge) connected via a 
 
 #### Claude Code
 ```bash
-claude mcp add discord -- npx discord-ai-organizer
+claude mcp add --scope user discord -- npx discord-ai-organizer
 ```
 
 #### Claude Desktop

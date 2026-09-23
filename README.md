@@ -68,7 +68,7 @@ Two pieces: a **browser extension** and an **MCP server**.
 <tr><td><strong>Claude Code</strong></td><td>
 
 ```bash
-claude mcp add discord -- npx discord-ai-organizer
+claude mcp add --scope user discord -- npx discord-ai-organizer
 ```
 
 O si configuras tu archivo JSON de Claude Desktop:
