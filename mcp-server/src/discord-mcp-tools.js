@@ -79,10 +79,8 @@ export function registerDiscordTools(server, bridge) {
     },
     async (params) => {
       try {
-        console.error('[Discord-MCP] Received apply_discord_folders params:', JSON.stringify(params));
         const targetFolders = params?.folders || [];
         if (!Array.isArray(targetFolders) || targetFolders.length === 0) {
-          console.error('[Discord-MCP] Rejected: empty folders list');
           return {
             isError: true,
             content: [
@@ -100,13 +98,11 @@ export function registerDiscordTools(server, bridge) {
           guildIds: f.guildIds || f.guild_ids || []
         }));
 
-        console.error('[Discord-MCP] Sending normalized folders count:', normalizedFolders.length);
         const result = await bridge.applyFolders({
           folders: normalizedFolders,
           unorganizedGuildIds: params.unorganizedGuildIds || []
         });
 
-        console.error('[Discord-MCP] Result:', JSON.stringify(result));
         return {
           content: [
             {
@@ -116,7 +112,6 @@ export function registerDiscordTools(server, bridge) {
           ]
         };
       } catch (error) {
-        console.error('[Discord-MCP] Error:', error.message);
         return {
           isError: true,
           content: [

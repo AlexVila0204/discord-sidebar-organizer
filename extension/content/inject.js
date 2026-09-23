@@ -323,10 +323,7 @@
       unorganized = Array.isArray(foldersInput.unorganizedGuildIds) ? foldersInput.unorganizedGuildIds : (Array.isArray(unorganizedGuildIds) ? unorganizedGuildIds : []);
     }
 
-    console.log('[Discord-AI-Inject] applyFolders received folders count:', folders.length, 'unorganized count:', unorganized.length);
-
     if (!folders || folders.length === 0) {
-      console.warn('[Discord-AI-Inject] Blocked attempt to apply empty folders list');
       throw new Error('Refusing to apply empty folders list: this would remove all folders. Please specify your folder categories.');
     }
 

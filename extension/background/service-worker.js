@@ -33,7 +33,6 @@ function connect() {
     socket = new WebSocket(BRIDGE_URL);
 
     socket.onopen = () => {
-      console.log('[Discord-AI-ServiceWorker] Connected to MCP bridge on', BRIDGE_URL);
       socket.send(JSON.stringify({ type: 'REGISTER_EXTENSION' }));
       broadcastStatus(true);
       if (reconnectTimer) {

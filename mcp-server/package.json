@@ -1,6 +1,6 @@
 {
   "name": "discord-ai-organizer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "description": "MCP server to organize Discord sidebar folders using AI (Claude, Gemini) via Model Context Protocol",
   "keywords": [
