@@ -1,0 +1,260 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 320px;
+  background: #111214;
+  color: #dcddde;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.popup-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.popup-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-diamond {
+  filter: drop-shadow(0 0 6px rgba(88, 101, 242, 0.6));
+}
+
+.popup-header h1 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #f2f3f5;
+  letter-spacing: -0.3px;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 600;
+  width: fit-content;
+  transition: all 0.3s ease;
+}
+
+.status-pill.connected {
+  background: rgba(35, 165, 90, 0.12);
+  color: #3ba55d;
+}
+
+.status-pill.disconnected {
+  background: rgba(240, 71, 71, 0.1);
+  color: #ed4245;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.status-pill.connected .status-dot {
+  box-shadow: 0 0 6px rgba(59, 165, 93, 0.6);
+}
+
+.popup-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 24px 16px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+}
+
+.glass-card.active {
+  border-color: rgba(88, 101, 242, 0.2);
+  background: rgba(88, 101, 242, 0.04);
+}
+
+.card-icon {
+  margin: 0 auto 12px;
+  color: #72767d;
+  transition: color 0.3s ease;
+}
+
+.glass-card.active .card-icon {
+  color: #3ba55d;
+}
+
+.card-message {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f2f3f5;
+  margin-bottom: 4px;
+}
+
+.card-sub {
+  font-size: 11px;
+  color: #72767d;
+}
+
+.action-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, #5865f2, #7C6AFF);
+  color: #fff;
+  transition: all 0.2s ease;
+  letter-spacing: 0.2px;
+}
+
+.action-btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(88, 101, 242, 0.3);
+}
+
+.action-btn:active {
+  transform: translateY(0);
+}
+
+.setup-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.setup-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  color: #72767d;
+  font-size: 11px;
+  cursor: pointer;
+  padding: 6px 2px;
+  transition: color 0.2s;
+}
+
+.setup-toggle:hover {
+  color: #dcddde;
+}
+
+.chevron {
+  transition: transform 0.2s ease;
+}
+
+.setup-section.open .chevron {
+  transform: rotate(180deg);
+}
+
+.setup-content {
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+.setup-section.open .setup-content {
+  display: flex;
+}
+
+.cmd-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cmd-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: #72767d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cmd-box {
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  padding: 6px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.cmd-box code {
+  flex: 1;
+  font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  font-size: 10px;
+  color: #b5bac1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.copy-btn {
+  background: none;
+  border: none;
+  color: #72767d;
+  cursor: pointer;
+  padding: 2px;
+  margin-left: 6px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  transition: all 0.15s;
+}
+
+.copy-btn:hover {
+  color: #dcddde;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.copy-btn.copied {
+  color: #3ba55d;
+}
+
+.popup-footer {
+  text-align: center;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.popup-footer a {
+  color: #4e5058;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: color 0.2s;
+}
+
+.popup-footer a:hover {
+  color: #7C6AFF;
+}

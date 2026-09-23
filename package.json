@@ -1,0 +1,18 @@
+{
+  "name": "discord-ai-sidebar-organizer",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Discord sidebar organizer using AI via Model Context Protocol and Chrome/Edge Extension",
+  "private": true,
+  "scripts": {
+    "start": "node mcp-server/src/index.js",
+    "start:mcp": "node mcp-server/src/index.js",
+    "test:mcp": "node mcp-server/test/mcp-test.js",
+    "test:bridge": "node scripts/test-bridge-cli.js",
+    "generate:icons": "node scripts/generate-icons.js",
+    "publish:mcp": "npm publish ./mcp-server"
+  },
+  "devDependencies": {
+    "ws": "^8.21.3"
+  }
+}

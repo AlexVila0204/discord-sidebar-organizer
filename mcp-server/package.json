@@ -1,0 +1,36 @@
+{
+  "name": "discord-ai-organizer",
+  "version": "1.0.1",
+  "type": "module",
+  "description": "MCP server to organize Discord sidebar folders using AI (Claude, Gemini) via Model Context Protocol",
+  "keywords": [
+    "discord",
+    "mcp",
+    "model-context-protocol",
+    "claude",
+    "gemini",
+    "sidebar",
+    "organizer"
+  ],
+  "license": "MIT",
+  "author": "AlexVila0204",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexVila0204/discord-sidebar-organizer.git"
+  },
+  "bin": {
+    "discord-ai-organizer": "src/index.js"
+  },
+  "files": [
+    "src/",
+    "README.md"
+  ],
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.18.0",
+    "ws": "^8.18.0",
+    "zod": "^3.24.2"
+  }
+}
